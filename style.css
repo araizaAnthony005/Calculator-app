@@ -25,10 +25,10 @@ body {
   padding: 20px;
 }
 
-/* Calculator box */
+/* Calculator wrapper */
 .calculator {
   background: var(--btn-color);
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 350px;
@@ -50,21 +50,23 @@ body {
   color: var(--text-color);
 }
 
-/* Display */
+/* Display section */
 .display {
   background-color: var(--btn-color);
   padding: 20px;
-  font-size: 2rem;
+  font-size: 2.2rem;
   text-align: right;
   word-wrap: break-word;
   min-height: 60px;
   color: var(--text-color);
 }
 
-/* Buttons grid */
+/* Button grid */
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 10px;
 }
 
 .btn {
@@ -75,6 +77,7 @@ body {
   cursor: pointer;
   transition: background 0.2s ease;
   color: var(--text-color);
+  border-radius: 8px;
 }
 
 .btn:hover {
@@ -83,17 +86,17 @@ body {
 
 .operator {
   background-color: var(--accent-color);
-  color: white;
+  color: #fff;
 }
 
 .control {
   background-color: #ff6b6b;
-  color: white;
+  color: #fff;
 }
 
 .equal {
   background-color: #4caf50;
-  color: white;
+  color: #fff;
   grid-row: span 2;
 }
 
@@ -101,26 +104,27 @@ body {
   grid-column: span 2;
 }
 
+/* Return link */
 .back-btn {
   display: inline-block;
   margin-bottom: 20px;
   font-size: 1rem;
-  color: var(--accent-color, #0077ff);
+  color: var(--accent-color);
   text-decoration: none;
   padding: 10px 14px;
-  border: 2px solid var(--accent-color, #0077ff);
+  border: 2px solid var(--accent-color);
   border-radius: 8px;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 .back-btn:hover {
-  background: var(--accent-color, #0077ff);
+  background: var(--accent-color);
   color: #fff;
 }
 
+/* Mobile Polish */
 @media (max-width: 500px) {
   .calculator {
-    max-width: 100%;
     border-radius: 0;
     padding: 16px;
   }
@@ -136,31 +140,28 @@ body {
   }
 
   .buttons {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    gap: 10px;
   }
 
   .btn {
-    font-size: 1.3rem;
-    padding: 16px;
-    border-radius: 8px;
-    transition: background 0.2s ease;
+    font-size: 1.4rem;
+    padding: 18px;
   }
 
   .wide {
     grid-column: span 2;
   }
-}
 
-button:active {
-  transform: scale(0.96);
-  opacity: 0.85;
-  transition: transform 0.1s ease;
-}
-@media (max-width: 600px) {
   .back-btn {
     display: block;
     width: 100%;
     text-align: center;
   }
+}
+
+/* Tap Feedback */
+button:active {
+  transform: scale(0.96);
+  opacity: 0.85;
+  transition: transform 0.1s ease;
 }
