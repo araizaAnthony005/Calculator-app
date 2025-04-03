@@ -12,7 +12,6 @@ body[data-theme="dark"] {
   --accent-color: #00ccff;
 }
 
-/* Base layout */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -23,9 +22,38 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 20px;
+  position: relative;
 }
 
-/* Calculator wrapper */
+/* Back Button */
+.back-btn {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  padding: 6px 10px;
+  border: 1.5px solid var(--accent-color);
+  border-radius: 6px;
+  background: transparent;
+  z-index: 999;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.back-btn:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+@media (max-width: 500px) {
+  .back-btn {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Calculator container */
 .calculator {
   background: var(--btn-color);
   border-radius: 12px;
@@ -33,6 +61,7 @@ body {
   width: 100%;
   max-width: 350px;
   overflow: hidden;
+  padding-bottom: 10px;
 }
 
 /* Theme toggle */
@@ -50,7 +79,7 @@ body {
   color: var(--text-color);
 }
 
-/* Display section */
+/* Display */
 .display {
   background-color: var(--btn-color);
   padding: 20px;
@@ -140,30 +169,4 @@ button:active {
   transform: scale(0.96);
   opacity: 0.85;
   transition: transform 0.1s ease;
-}
-.back-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 0.95rem;
-  color: var(--accent-color);
-  text-decoration: none;
-  padding: 8px 12px;
-  border: 2px solid var(--accent-color);
-  border-radius: 6px;
-  background: transparent;
-  transition: background 0.2s ease, color 0.2s ease;
-  z-index: 10;
-}
-
-.back-btn:hover {
-  background: var(--accent-color);
-  color: white;
-}
-
-@media (max-width: 600px) {
-  .back-btn {
-    font-size: 1rem;
-    padding: 10px 14px;
-  }
 }
